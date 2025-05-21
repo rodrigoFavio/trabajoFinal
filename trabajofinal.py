@@ -28,3 +28,14 @@ if opcion == "1":
 
         if stock < 200:
             print("¡Queda poco papel! Reponer pronto.")
+            
+elif opcion == "2":          
+    # Calculamos ingresos con for       
+        total_ingresos = 0
+        for pedido in pedidos:
+            total_ingresos += pedido[1]
+
+        print("\nResumen:")
+        print(f"- Pedidos realizados: {len(pedidos)}")
+        print(f"- Ingresos acumulados: S/ {total_ingresos:.2f}")
+        print(f"- Hojas restantes: {stock}")
