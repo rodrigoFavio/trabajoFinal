@@ -6,18 +6,18 @@ def calcular_precio(paginas):
     else:
         return 0.15
 
-stock = 2000           # Hojas de papel disponibles
-pedidos = []           # Lista que guardará tuplas (páginas, monto)
+stock = 2000           
+pedidos = []          
 
-while True:                   # menú principal
+while True:                  
     print("\n1) Nuevo pedido\n2) Resumen\n3) Cargar hojas\n4) Cerrar caja")
     opcion = input("Opción: ")
     if opcion == "1":
         paginas = int(input("¿Cuántas páginas desea copiar?: "))
         precio_por_pagina = calcular_precio(paginas)
         monto = paginas * precio_por_pagina
-        pedidos.append((paginas, monto))              # Guardamos el pedido como tupla
-        stock -= paginas                             # Descontamos las hojas del stock
+        pedidos.append((paginas, monto))              
+        stock -= paginas                             
 
         print(f"Pedido: {paginas} páginas x S/ {precio_por_pagina:.2f} = S/ {monto:.2f}")
 
@@ -26,7 +26,7 @@ while True:                   # menú principal
 
 
 
-    elif opcion == "2":          # Calculamos ingresos con for
+    elif opcion == "2":          
         total_ingresos = 0
         for pedido in pedidos:
             total_ingresos += pedido[1]
