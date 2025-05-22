@@ -39,3 +39,28 @@ elif opcion == "2":
         print(f"- Pedidos realizados: {len(pedidos)}")
         print(f"- Ingresos acumulados: S/ {total_ingresos:.2f}")
         print(f"- Hojas restantes: {stock}")
+
+elif opcion == "3":
+        stock += 500
+        print("Se han añadido 500 hojas. Nuevo stock:", stock)
+
+elif opcion == "4":
+        print("\n=== CIERRE DE CAJA ===")
+        total_ingresos = 0
+        pedido_numero = 1
+        
+for pedido in pedidos:
+            paginas = pedido[0]
+            monto = pedido[1]
+            print(f"{pedido_numero}. {paginas} páginas - S/ {monto:.2f}")
+            total_ingresos += monto
+            pedido_numero += 1
+
+            print(f"\nTotal de pedidos: {len(pedidos)}")
+            print(f"Ingresos totales: S/ {total_ingresos:.2f}")
+            print(f"Hojas restantes:  {stock}")
+            print("¡Gracias por usar el sistema!")
+            break
+
+else:
+        print("Opción no válida. Por favor, ingresa 1, 2, 3 o 4.")
