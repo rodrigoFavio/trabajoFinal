@@ -13,13 +13,13 @@ while True:
     print("\n1) Nuevo pedido\n2) Resumen\n3) Cargar hojas\n4) Cerrar caja")
     opcion = input("Opción: ")
     if opcion == "1":
-        paginas = int(input("¿Cuántas páginas desea copiar?: "))
+        paginas = int(input("¿Cuantas paginas desea copiar?: "))
         precio_por_pagina = calcular_precio(paginas)
         monto = paginas * precio_por_pagina
         pedidos.append((paginas, monto))              
         stock -= paginas                             
 
-        print(f"Pedido: {paginas} páginas x S/ {precio_por_pagina:.2f} = S/ {monto:.2f}")
+        print(f"Pedido: {paginas} paginas x S/ {precio_por_pagina:.2f} = S/ {monto:.2f}")
 
         if stock < 200:
             print("¡Queda poco papel! Reponer pronto.")
@@ -50,7 +50,7 @@ while True:
         for pedido in pedidos:
             paginas = pedido[0]
             monto = pedido[1]
-            print(f"{pedido_numero}. {paginas} páginas - S/ {monto:.2f}")
+            print(f"{pedido_numero}. {paginas} paginas - S/ {monto:.2f}")
             total_ingresos += monto
             pedido_numero += 1
 
@@ -61,4 +61,4 @@ while True:
         break
 
     else:
-        print("Opción no válida. Por favor, ingresa 1, 2, 3 o 4.")
+        print("Opcion no válida. Por favor, ingresa 1, 2, 3 o 4.")
